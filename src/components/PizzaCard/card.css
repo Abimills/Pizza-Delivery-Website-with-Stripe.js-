@@ -1,0 +1,15 @@
+.pizza-card {
+  width: 20%;
+  height: max-content;
+  
+}
+.pizza-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+.description-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

@@ -1,0 +1,20 @@
+.pizza-card-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.filter-pizza {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.choose-btn {
+  padding: 10px 25px;
+  background-color: aliceblue;
+  border: 1px solid aliceblue;
+  border-radius: 30px;
+}
