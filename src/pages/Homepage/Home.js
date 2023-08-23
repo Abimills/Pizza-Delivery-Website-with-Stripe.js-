@@ -4,10 +4,11 @@ import About from "../AboutPage/About";
 import Contact from "../Contact/Contact";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import "./home.css"
 
 const Home = () => {
   return (
-    <div>
+    <div >
       <Navbar />
       <LandingPage />
       <About />

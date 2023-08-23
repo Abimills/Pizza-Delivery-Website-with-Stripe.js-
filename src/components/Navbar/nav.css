@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&display=swap');
+
+/* font-family: 'Amatic SC', cursive;
+font-family: 'Prata', serif; */
 .navbar-container{
       width: 100%;
       height: 100px;
@@ -13,6 +17,7 @@
 }
 .navigation li{
       list-style: none;
+      font-family: 'Prata', serif;
 
 }
 .logo{
@@ -23,6 +28,7 @@
       gap: 0.1rem;
       justify-content: flex-start;
       flex-direction: column;
+      font-family: 'Prata', serif;
 
 }
 .logo-text{
@@ -30,18 +36,21 @@
 }
 .logo p {
       display: inline;
-
-}
-.contact{
-      width: 20%;
-      display: flex;
-      align-items: center;
-      gap:1rem;
-}
+       font-family: 'Amatic SC', cursive
+       
+      }
+      .contact{
+            width: 20%;
+            display: flex;
+            align-items: center;
+            gap:1rem;
+            font-family: 'Prata', serif;
+      }
 .call{
       padding: 8px 13px;
       background-color: black;
       color:white;
       border:1px solid black;
       border-radius: 5px;
+      font-family: 'Amatic SC', cursive
 }

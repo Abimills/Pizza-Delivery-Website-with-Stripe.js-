@@ -1,9 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&display=swap");
+
+/* font-family: 'Amatic SC', cursive;
+font-family: 'Prata', serif; */
+.landing-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .pizza-card-container {
   width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin-top: 2rem;
 }
 .filter-pizza {
   width: 100%;
@@ -17,4 +28,46 @@
   background-color: aliceblue;
   border: 1px solid aliceblue;
   border-radius: 30px;
+}
+
+.landing-container img {
+  rotate: 90deg;
+  margin-top: -3rem;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  margin-left: -3rem;
+}
+.pizza-container {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.deliciuos-btn {
+  padding: 30px;
+  /* border-radius: 50%; */
+  background-color: darkred;
+  border: 1px solid darkred;
+  color: white;
+}
+.pizza-handle {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform: rotate(270deg);
+  object-fit: contain;
+
+  
+}
+.pizza-yari {
+  font-family: "Amatic SC", cursive;
+  text-align: center;
+  font-size: 1.1rem;
+}
+.main-header {
+  text-align: center;
+  font-family: "Prata", serif;
+  font-size: 3rem;
 }

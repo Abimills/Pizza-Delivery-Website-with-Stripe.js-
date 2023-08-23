@@ -7,10 +7,10 @@ const PizzaCard = () => {
       <div className="description-container">
 
       <h6 className="pizza-name">Margarita</h6>
-      <span> 32cm</span>
+      <span> $20</span>
       </div>
-      <p>description</p>
-      <p>$20</p>
+      <p>This is a margarita pizza with alot of catchup</p>
+      <button className="add-to-cart">Add to Cart</button>
     </div>
   );
 };
