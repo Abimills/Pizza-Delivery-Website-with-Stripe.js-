@@ -7,9 +7,9 @@ const PizzaCard = () => {
       <div className="description-container">
 
       <h6 className="pizza-name">Margarita</h6>
-      <span> $20</span>
+      <p> $20</p>
       </div>
-      <p>This is a margarita pizza with alot of catchup</p>
+      <p className="description">This is a margarita pizza with alot of catchup</p>
       <button className="add-to-cart">Add to Cart</button>
     </div>
   );

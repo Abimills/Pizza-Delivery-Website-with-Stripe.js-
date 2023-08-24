@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&family=Sedgwick+Ave+Display&display=swap");
 
 /* font-family: 'Amatic SC', cursive;
-font-family: 'Prata', serif; */
+font-family: 'Prata', serif;
+font-family: 'Sedgwick Ave Display', cursive; */
 .landing-container {
   width: 100%;
   display: flex;
@@ -25,9 +26,19 @@ font-family: 'Prata', serif; */
 }
 .choose-btn {
   padding: 10px 25px;
-  background-color: aliceblue;
-  border: 1px solid aliceblue;
+  background-color: white;
+  border: 1px solid white;
   border-radius: 30px;
+  font-family: "Prata", serif;
+}
+.chosen {
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+.chosen:hover {
+  color: black;
+  background-color: transparent;
 }
 
 .landing-container img {
@@ -37,6 +48,12 @@ font-family: 'Prata', serif; */
   height: 400px;
   object-fit: cover;
   margin-left: -3rem;
+
+}
+.pizza-cut{
+ 
+ 
+
 }
 .pizza-container {
   width: 100%;
@@ -45,12 +62,21 @@ font-family: 'Prata', serif; */
   align-items: center;
   justify-content: space-evenly;
 }
-.deliciuos-btn {
-  padding: 30px;
-  /* border-radius: 50%; */
-  background-color: darkred;
-  border: 1px solid darkred;
-  color: white;
+.try-btn {
+  /* padding: 20px 20px ;
+   */
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+  border-radius: 50%;
+  /* background-color: black; */
+  /* border: 1px solid darkred;  */
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  background-image: url("../../assets/images/circle.png");
+
+  font-family: "Sedgwick Ave Display", cursive;
 }
 .pizza-handle {
   width: 200px;
@@ -58,8 +84,7 @@ font-family: 'Prata', serif; */
   position: relative;
   transform: rotate(270deg);
   object-fit: contain;
-
-  
+  margin-bottom: -5rem;
 }
 .pizza-yari {
   font-family: "Amatic SC", cursive;
@@ -70,4 +95,10 @@ font-family: 'Prata', serif; */
   text-align: center;
   font-family: "Prata", serif;
   font-size: 3rem;
+}
+.choose-header {
+  font-family: "Amatic SC", cursive;
+  /* font-family: 'Prata', serif; */
+  font-family: "Sedgwick Ave Display", cursive;
+  text-align: center;
 }

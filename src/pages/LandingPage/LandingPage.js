@@ -16,13 +16,14 @@ const LandingPage = () => {
           </div>
           <div className="pizza-container">
             <img src={pizzaHandle} alt=""  className="pizza-handle"/>
-            <button className="deliciuos-btn"> Try and never go back?</button>
-            <img src={pizza} alt="pizza" />
+            <button className="try-btn"> Order Now!</button>
+            <img src={pizza} alt="pizza" className="pizza-cut" />
           </div>
         </div>
-        <div className="pizzaes-container">
-          <h1>Choose your type of Pizza</h1>
+        <div className="all-pizza-container">
+          <h1 className="choose-header">Choose your type of Pizza</h1>
           <div className="filter-pizza">
+            <button className="choose-btn chosen">All</button>
             <button className="choose-btn">Vegan</button>
             <button className="choose-btn">Fish</button>
             <button className="choose-btn">Vegetarian</button>

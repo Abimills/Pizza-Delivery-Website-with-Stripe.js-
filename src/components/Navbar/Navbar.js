@@ -8,7 +8,7 @@ const Navbar = () => {
             <li>Service</li>
       </ul>
       <div className="logo">
-            <h1 className="logo-text">Pizza B.</h1>
+            <h1 className="logo-text">PizzaFam</h1>
             <p>to live is to enjoy</p>
       </div>
       <div className="contact">

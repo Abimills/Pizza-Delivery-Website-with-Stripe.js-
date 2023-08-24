@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&family=Sedgwick+Ave+Display&display=swap');
+
+/* font-family: 'Amatic SC', cursive;
+font-family: 'Prata', serif;
+font-family: 'Sedgwick Ave Display', cursive; */
+.about-section{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     margin-top: 5rem;;
+
+}
+.right-side,.left-side,.center-side{
+      padding: 10px;
+      margin: 1rem;;
+      width: 33%;
+}
+.right-side{
+   margin-left: -7rem;;
+    font-family: 'Amatic SC', cursive;
+    /* font-family: 'Prata', serif; */
+    
+}
+.center-side{
+      margin-right: -5.3rem;
+}
+.divider{
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+      transform: rotate(270deg);
+}
+.chef{
+      width: 100%;
+      height: 400px;
+      object-fit: contain;
+      border: 1px solid black;
+      border-radius: 50%;
+       /* background-image: url("../../assets/images/red-removed.png");
+  background-size: cover; */
+}
+.chef-header{
+      font-family: 'Amatic SC', cursive;
+      
+}
+.our-top{
+font-family: 'Sedgwick Ave Display', cursive; 
+
+
+}
+.chef-container{
+     
+}

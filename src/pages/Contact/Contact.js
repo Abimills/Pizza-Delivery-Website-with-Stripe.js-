@@ -1,9 +1,19 @@
-import React from 'react'
+import circle from "../../assets/images/mobile.png";
+import "./contact.css";
 
 const Contact = () => {
   return (
-    <div>Contact</div>
-  )
-}
+    <div className="contact-container">
+      <h1 className="reach-header">Reach out for any enquery</h1>
+      <div className="center-side-contact">
+        <img src={circle} alt="" className="circle" />
+        <div className="left-side-contact">
+          <h1 className="contact-header">Call our 24/7 customer service</h1>
+          <p className="para-header">have hour stuff listen to your appetite!</p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Contact
+export default Contact;

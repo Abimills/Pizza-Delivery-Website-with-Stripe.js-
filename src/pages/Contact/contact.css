@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&family=Sedgwick+Ave+Display&display=swap");
+
+.center-side-contact{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      
+      
+}
+.reach-header{
+      text-align: center;
+      font-family: 'Amatic SC', cursive;
+}
+.contact-header{
+      font-family: 'Amatic SC', cursive;
+      font-family: 'Prata', serif;
+      font-family: 'Sedgwick Ave Display', cursive; 
+      
+}
+.para-header{
+      font-family: 'Amatic SC', cursive;
+      font-size: 1.5rem;
+
+}
