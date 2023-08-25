@@ -46,6 +46,7 @@ font-family: 'Sedgwick Ave Display', cursive; */
             align-items: center;
             gap:1rem;
             font-family: 'Amatic SC', cursive;
+            margin-left: 5rem;
 
       }
 .call{
@@ -54,5 +55,11 @@ font-family: 'Sedgwick Ave Display', cursive; */
       color:white;
       border:1px solid black;
       border-radius: 5px;
-      font-family: 'Amatic SC', cursive
+      font-family: 'Amatic SC', cursive;
+}
+.leave{
+      width: 100px;
+      height: 70px;
+      margin-right: -4rem;
+      object-fit: contain;
 }

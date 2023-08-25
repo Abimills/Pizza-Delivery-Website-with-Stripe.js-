@@ -1,4 +1,5 @@
 import "./nav.css";
+import leave from "../../assets/images/leave1.png"
 
 const Navbar = () => {
   return <nav className="navbar-container">
@@ -15,6 +16,7 @@ const Navbar = () => {
             <p> +311000-11001</p>
             <button className="call">Contact Us</button>
       </div>
+            <img src={leave} alt="" className="leave"/>
   </nav>;
 };
 

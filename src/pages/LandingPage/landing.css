@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&family=Sedgwick+Ave+Display&display=swap");
-
-/* font-family: 'Amatic SC', cursive;
-font-family: 'Prata', serif;
-font-family: 'Sedgwick Ave Display', cursive; */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Italianno&family=Prata&family=Sedgwick+Ave+Display&display=swap');
+/* font-family: 'Amatic SC', cursive; */
+/* font-family: 'Italianno', cursive; */
+/* font-family: 'Prata', serif; */
+/* font-family: 'Sedgwick Ave Display', cursive; */
 .landing-container {
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
 }
 .pizza-card-container {
   width: 100%;
@@ -24,6 +25,19 @@ font-family: 'Sedgwick Ave Display', cursive; */
   justify-content: center;
   gap: 4rem;
 }
+.land-header{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+.land-header div{
+  display: flex;
+  align-items: center;
+
+}
+
 .choose-btn {
   padding: 10px 25px;
   background-color: white;
@@ -42,25 +56,70 @@ font-family: 'Sedgwick Ave Display', cursive; */
 }
 
 .landing-container img {
-  rotate: 90deg;
+  /* rotate: 90deg;
   margin-top: -3rem;
   width: 300px;
   height: 400px;
   object-fit: cover;
-  margin-left: -3rem;
+  margin-left: -3rem; */
+ 
 
 }
-.pizza-cut{
+.pizza-handle{
+ width:70%;
+ height: 400px;
+ object-fit: contain;
+ margin-top: -0.5rem;
+ margin-right: -14rem;
+ z-index:4;
+ transform: rotate(10deg);
  
  
-
 }
 .pizza-container {
   width: 100%;
-  height: max-content;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  padding: 10px;
+}
+.semi-circle{
+  width: 50%;
+  height:300px;
+  object-fit: contain;
+  transform: scale();
+  transform: rotate(-2deg);
+  margin-left: -9rem;
+  
+
+}
+.slicer{
+  width: 100px;
+  object-fit: contain;
+  margin-top: 6rem;
+  margin-left: -6rem;
+  z-index: 3;
+  transform: rotate(200deg);
+}
+.gue{
+  width: 120px;
+  object-fit: contain;
+  margin-top: 6rem;
+  margin-left: -0rem;
+  z-index: 5;
+  transform: rotate(200deg);
+
+}
+.coca-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.coca{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 .try-btn {
   /* padding: 20px 20px ;
@@ -78,14 +137,14 @@ font-family: 'Sedgwick Ave Display', cursive; */
 
   font-family: "Sedgwick Ave Display", cursive;
 }
-.pizza-handle {
+/* .pizza-handle {
   width: 200px;
   height: 200px;
   position: relative;
-  transform: rotate(270deg);
+  transform: rotate(0deg);
   object-fit: contain;
   margin-bottom: -5rem;
-}
+} */
 .pizza-yari {
   font-family: "Amatic SC", cursive;
   text-align: center;
@@ -94,7 +153,30 @@ font-family: 'Sedgwick Ave Display', cursive; */
 .main-header {
   text-align: center;
   font-family: "Prata", serif;
-  font-size: 3rem;
+  font-size: 9rem;
+  font-family: 'Italianno', cursive;
+  margin-bottom: -3rem;
+  margin-top: -3rem;
+  color:rgb(8, 177, 109);
+
+}
+
+.discover{
+  /* width: 250px; */
+  padding: 10px 25px;
+  background-color: rgb(8, 177, 109);;
+  border : 1px solid rgb(8, 177, 109);;
+  border-radius: 2px;
+  color:white;
+  margin-left: -1.7rem;
+  z-index: -1;
+
+}
+.main-header span{
+  font-size: 13rem;
+  font-family: 'Italianno', cursive;
+
+  
 }
 .choose-header {
   font-family: "Amatic SC", cursive;
