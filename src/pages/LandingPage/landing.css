@@ -66,15 +66,37 @@
 
 }
 .pizza-handle{
- width:70%;
- height: 400px;
+ width:250px;
+ height: 250px;
  object-fit: contain;
- margin-top: -0.5rem;
- margin-right: -14rem;
+ margin-top: 0rem;
+ margin-right: -8.5rem;
  z-index:4;
  transform: rotate(10deg);
+ border: 10px solid rgb(8, 177, 109);;;
+ border-radius: 50%;;
+ /* background-color: red; */
+ 
+
  
  
+}
+.greener{
+  width: 200px;
+  height:200px;
+  object-fit:contain;
+  /* margin-top: 1rem;; */
+  position: relative;
+  left: -180px;
+  bottom: -3rem;
+
+}
+.layered{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-left: -9rem;
+  z-index: 7;
 }
 .pizza-container {
   width: 100%;
@@ -82,24 +104,29 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+  margin-top: -2rem;
 }
 .semi-circle{
-  width: 50%;
-  height:300px;
+  width: 44%;
+  height:286px;
   object-fit: contain;
-  transform: scale();
   transform: rotate(-2deg);
-  margin-left: -9rem;
+  margin-left: -8.5rem;
   
 
 }
 .slicer{
-  width: 100px;
+  width: 105px;
   object-fit: contain;
-  margin-top: 6rem;
-  margin-left: -6rem;
-  z-index: 3;
-  transform: rotate(200deg);
+  margin-top: 1rem;
+  margin-right: -2rem;
+  z-index: 6;
+  display: none;
+  transform: rotate(160deg);
+}
+.green{
+  margin-left: -10rem;;
+  margin-top: 0;
 }
 .gue{
   width: 120px;
@@ -120,6 +147,7 @@
   width: 100px;
   height: 100px;
   object-fit: contain;
+  margin-left: -15rem;
 }
 .try-btn {
   /* padding: 20px 20px ;
@@ -149,6 +177,8 @@
   font-family: "Amatic SC", cursive;
   text-align: center;
   font-size: 1.1rem;
+  margin-bottom: -3rem;
+  margin-top:-3rem;
 }
 .main-header {
   text-align: center;
@@ -160,7 +190,90 @@
   color:rgb(8, 177, 109);
 
 }
+.pizza-fam{
+  width: 800px;
+  height:300px;
+  object-fit: cover;
+  margin: 1rem;
+}
+.service-header{
+  text-align: center;
+  font-family: "Prata", serif;
+  margin: 4rem;;
+}
+.service-boxes{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+.fam-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+    
+  }
+  .fam-container p{
+  font-family: "Amatic SC", cursive;
 
+}
+.fam-container h3{
+font-family: 'Italianno', cursive;
+font-size: 2rem;
+
+}
+.collect{
+  width: 50px;
+  height: 70px;
+  object-fit: contain;
+  position: relative;
+  top: -100px;
+  right: -100px;
+      
+}
+.come{
+  right: -70px;
+  z-index: -1;
+}
+.greene{
+  width: 100px;
+  height: 200px;
+  object-fit: contain;
+  position: absolute;
+  bottom: -10rem;
+  left: 0;
+
+}
+
+.service-boxes button{
+  padding: 15px 40px;
+  background-color: transparent;
+  border: 1px solid rgb(8, 177, 109);;
+  border-radius: 30px;  
+}
+.service-boxes .one{
+  background-color: black;
+  color:white;;
+  border: 1px solid black;
+
+}
+.service-boxes .three{
+  background-color: rgb(8, 177, 109);;
+  color:white;;
+
+}
+.van-container{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-wrap: wrap;
+  position: relative;
+
+}
 .discover{
   /* width: 250px; */
   padding: 10px 25px;
@@ -169,8 +282,37 @@
   border-radius: 2px;
   color:white;
   margin-left: -1.7rem;
-  z-index: -1;
+  cursor: pointer;
 
+}
+.paparika-container{
+  position: relative;
+  width: 10px;
+
+}
+.paparika{
+  position: absolute;
+  top: -160px;
+  width: 40px;
+  height: 50px;
+  object-fit: contain;
+  z-index: 1;
+
+
+}
+.tomatoe{
+  width: 40px;
+  height: 50px;
+  object-fit: contain;
+  position: absolute;
+  top:-160px;
+  z-index: 0;
+  margin-left: 1rem;
+
+}
+.discover:hover {
+  background-color: transparent;
+color:rgb(8, 177, 109);
 }
 .main-header span{
   font-size: 13rem;
