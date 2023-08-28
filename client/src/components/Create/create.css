@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Prata&family=Sedgwick+Ave+Display&display=swap");
+
+/* font-family: 'Amatic SC', cursive; */
+/* font-family: 'Prata', serif; */
+/* font-family: 'Sedgwick Ave Display', cursive; */
+.all-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pizza-form {
+  background-color: white;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.pizza-form input {
+  width: 50%;
+  margin-bottom: 1rem;
+  font-family: "Amatic SC", cursive;
+  padding: 5px;
+  /* font-family: 'Prata', serif; */
+  /* font-family: 'Sedgwick Ave Display', cursive; */
+  height: 40px;
+  outline: none;
+  font-weight: 900;
+  font-size: 1rem;
+}
+.pizza-form h3 {
+  width: 100%;
+  font-family: "Amatic SC", cursive;
+  font-family: 'Prata', serif;
+  text-align: left;
+  font-weight: 500;
+}
+.create-container {
+  width: 70%;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(8, 177, 109);
+  border-radius: 5px;
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+}
+.create-header {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Amatic SC", cursive;
+  color: white;
+}
+.create {
+  padding: 10px;
+  width: 50%;
+  background-color: rgb(8, 177, 109);
+  border: 1px solid rgb(8, 177, 109);
+  color: white;
+  border-radius: 15px;
+  font-family: "Prata", serif;
+  cursor: pointer;
+}
+.create:hover{
+      background-color: transparent;
+      color:black;
+}

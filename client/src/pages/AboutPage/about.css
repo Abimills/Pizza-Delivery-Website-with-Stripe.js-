@@ -4,12 +4,15 @@
 font-family: 'Prata', serif;
 font-family: 'Sedgwick Ave Display', cursive; */
 .about-section{
-      width: 100%;
+     
+
+}
+.about-sub{
+ width: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
      margin-top: 5rem;;
-
 }
 .right-side,.left-side,.center-side{
       padding: 10px;
@@ -41,7 +44,10 @@ font-family: 'Sedgwick Ave Display', cursive; */
   background-size: cover; */
 }
 .chef-header{
+      /* width: 100%; */
       font-family: 'Amatic SC', cursive;
+      text-align: center;
+      margin: 2rem 0 -3rem;
       
 }
 .our-top{

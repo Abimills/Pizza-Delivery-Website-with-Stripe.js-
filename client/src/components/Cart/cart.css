@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Italianno&family=Prata&family=Sedgwick+Ave+Display&display=swap");
+/* font-family: 'Amatic SC', cursive; */
+/* font-family: 'Italianno', cursive; */
+/* font-family: 'Prata', serif; */
+/* font-family: 'Sedgwick Ave Display', cursive; */
+
+.cart-header {
+  font-family: "Prata", serif;
+  margin: 1rem 0.4rem;
+  font-size: 1.3rem;
+}
+.cart-container {
+  width: 70%;
+}
+.cart-order {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Amatic SC", cursive;
+  padding: 10px;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.underline {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+.price {
+  /* font-family: 'Prata', serif; */
+  font-size: 1.3rem;
+}
+.close {
+  font-size: 1.4rem;
+  color: gray;
+  margin-right: 5rem;
+}
+.total-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.total {
+  width: 30%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 3rem;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.total h3 {
+  font-family: "Prata", serif;
+}
+
+.checkout {
+  width: 97%;
+  padding: 10px;
+  margin: 0 1rem;
+  background-color: rgb(8, 177, 109);
+  border: 1px solid rgb(8, 177, 109);
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
+.subtotal {
+  font-family: "Amatic SC", cursive;
+
+}
+.total-price{
+      font-size: 2rem;
+}
+.line {
+  content: none;
+  width: 78%;
+  /* text-align: center; */
+  background-color: rgb(201, 197, 197);
+  height: 2px;
+  border-radius: 60px;
+  margin-left: 120px;
+}
+.size-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.size {
+  font-size: 0.7rem;
+  margin-top: -1rem;
+  color: rgb(8, 177, 109);
+  font-weight: 800;
+}
+.inc-dec-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px solid gray;
+  width: 100px;
+  height: 25px;
+  border-radius: 20px;
+}
+.inc,
+.dec {
+  background-color: transparent;
+  border: none;
+}
+
+.order-img {
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.order-name {
+  font-family: "Prata", serif;
+  font-size: 0.8rem;
+}

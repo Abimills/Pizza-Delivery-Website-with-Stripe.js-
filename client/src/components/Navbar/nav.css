@@ -9,6 +9,7 @@
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+        color: rgb(8, 177, 109);
 }
 .navigation{
       width: 20%;
@@ -72,4 +73,17 @@
       object-fit: contain;
       position: relative;
       left: 2rem;
+}
+.cart{
+      font-size: 1.7rem;
+      color:rgb(8, 177, 109);
+      color:black;
+      border:1px solid rgb(8, 177, 109);
+      border-top:1px solid transparent;
+      border-right: 1px solid transparent;
+      border-left: 1px solid transparent;
+      border-radius: 50%;
+}
+.link{
+      text-decoration: none;
 }
