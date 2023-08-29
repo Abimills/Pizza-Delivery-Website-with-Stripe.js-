@@ -9,33 +9,14 @@ const cloudinaryOptions = {
 
 export const createPizza = async (req, res) => {
   try {
-    const result = await cloudinary.v2.uploader.upload(
-      req.body.img,
-      cloudinaryOptions
-    );
-    if (!result) {
-      res.json({ msg: "something went wrong with your img" });
-    } else {
-      const { url } = result;
-      console.log("url");
-      const { name, img, description, price, category } = req.body;
+    const newPizza = await Pizza.create(req.body);
 
-      const newPizza = await Pizza.create({
-        name,
-        img: url,
-        description,
-        price,
-        category,
-      });
-
-      res
-        .status(201)
-        .json({ success: true, msg: "created new pizza", newPizza });
-    }
+    res.status(201).json({ success: true, msg: "created new pizza", newPizza });
   } catch (error) {
     console.log({ msg: "Error in creating a new pizza", error });
   }
 };
+
 export const getPizza = async (req, res) => {
   try {
     const pizzas = await Pizza.find();
@@ -44,7 +25,12 @@ export const getPizza = async (req, res) => {
     } else {
       res
         .status(200)
-        .json({ success: true, msg: "here is all your pizza", pizzas });
+        .json({
+          count: pizzas?.length,
+          success: true,
+          msg: "here is all your pizza",
+          pizzas,
+        });
     }
   } catch (error) {
     console.log({ msg: "error in getting all pizza", error });

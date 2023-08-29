@@ -24,12 +24,12 @@
   margin-bottom: 1rem;
   font-family: "Amatic SC", cursive;
   padding: 5px;
-  /* font-family: 'Prata', serif; */
+  font-family: 'Prata', serif;
   /* font-family: 'Sedgwick Ave Display', cursive; */
   height: 40px;
   outline: none;
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 .pizza-form h3 {
   width: 100%;
@@ -48,11 +48,46 @@
   border-radius: 5px;
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
+.img-uploader{
+  background-color: red;
+  
+}
+.upload-img{
+  width:52%;
+  margin-bottom: 1rem;
+  padding: 15px;
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid gray;
+      font-family: 'Prata', serif;
+
+}
+.img-uploader .button{
+  background-color: green;
+}
 .create-header {
   font-size: 2rem;
   text-align: center;
   font-family: "Amatic SC", cursive;
   color: white;
+}
+.upload-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-container p{
+  color:rgb(8, 177, 109);
+    font-family: 'Prata', serif;
+
+
+}
+.tick{
+  font-size: 2rem;
+  color:rgb(8, 177, 109)
 }
 .create {
   padding: 10px;

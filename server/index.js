@@ -11,13 +11,13 @@ const app = express();
 app.use(express.json());
 
 // check for cors
-app.use(
-  cors({
-    origin: true,
-    credential: true,
-  })
-);
-
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+ 
 app.use("/api", pizzaRouter);
 
 // app.get("/", (req, res) => {

@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import greener from "../../assets/images/greener.png";
 import green from "../../assets/images/green.png";
 import slicer from "../../assets/images/slicer.png";
@@ -11,6 +13,15 @@ import pizzaHandle from "../../assets/images/pizzamalet.png";
 import PizzaCard from "../../components/PizzaCard/PizzaCard";
 import "./landing.css";
 const LandingPage = () => {
+  const [data, setData] = useState([]);
+  const fetch = async () => {
+    const res = await axios.get("http://localhost:4000/api/");
+    setData(res?.data);
+  };
+  useEffect(() => {
+    fetch();
+  }, []);
+  console.log(data);
   return (
     <main className="mother-container">
       <div className="landing-page-container">
@@ -57,10 +68,9 @@ const LandingPage = () => {
           </div>
 
           <div className="pizza-card-container">
-            <PizzaCard />
-            <PizzaCard />
-            <PizzaCard />
-            <PizzaCard />
+            {data?.pizzas?.map((pizza) => {
+              return <PizzaCard pizza={pizza} key={pizza._id} />;
+            })}
           </div>
           <div className="service-container">
             <h1 className="service-header">Our Services</h1>
@@ -70,11 +80,10 @@ const LandingPage = () => {
               <button className="three"> Delicious Food</button>
             </div>
             <div className="van-container">
-
-            <img src={green} alt="" className="greene" />
-            <img src={pizzafam} alt="" className="pizza-fam" />
-            <img src={paparika} alt="" className="collect" />
-            <img src={tomatoe} alt="" className="collect come" />
+              <img src={green} alt="" className="greene" />
+              <img src={pizzafam} alt="" className="pizza-fam" />
+              <img src={paparika} alt="" className="collect" />
+              <img src={tomatoe} alt="" className="collect come" />
             </div>
             <div className="fam-container">
               <p>Visit Our Resturant</p>
