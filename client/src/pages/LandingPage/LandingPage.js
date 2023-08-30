@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import greener from "../../assets/images/greener.png";
+import grey from "../../assets/images/grey.png";
+import blue2 from "../../assets/images/blue2.png";
 import green from "../../assets/images/green.png";
 import slicer from "../../assets/images/slicer.png";
 import paparika from "../../assets/images/paparika.png";
@@ -8,7 +10,7 @@ import tomatoe from "../../assets/images/tomatoe.png";
 import layered from "../../assets/images/layeredpic.png";
 import pizzafam from "../../assets/images/pizzafam.png";
 import coca from "../../assets/images/coca.png";
-import semi from "../../assets/images/semi.png";
+import semi from "../../assets/images/semi2.png";
 import pizzaHandle from "../../assets/images/pizzamalet.png";
 import PizzaCard from "../../components/PizzaCard/PizzaCard";
 import "./landing.css";
@@ -54,6 +56,10 @@ const LandingPage = () => {
             <img src={pizzaHandle} alt="" className="pizza-handle" />
             <img src={semi} alt="pizza" className="semi-circle" />
             <img src={layered} alt="slicer" className="layered" />
+            {/* <img src={layered} alt="slicer" className="layered" />
+            <img src={layered} alt="slicer" className="layered layer2" /> */}
+            <img src={grey} alt="grey" className="grey" />
+            <img src={blue2} alt="grey" className="bluer" />
           </div>
         </div>
         <div className="all-pizza-container">
@@ -68,7 +74,7 @@ const LandingPage = () => {
           </div>
 
           <div className="pizza-card-container">
-            {data?.pizzas?.map((pizza) => {
+            {data?.pizzas?.reverse().map((pizza) => {
               return <PizzaCard pizza={pizza} key={pizza._id} />;
             })}
           </div>

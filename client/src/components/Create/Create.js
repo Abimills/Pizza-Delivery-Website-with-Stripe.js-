@@ -13,7 +13,6 @@ const Create = () => {
 
   const [file, setFile] = useState(null);
   const [data, setData] = useState([]);
-  const fileInputRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,10 +36,15 @@ const Create = () => {
       });
       const data = await response.json();
       setData(data);
+      setPizzaDetails({
+        name: "",
+        price: "",
+        category: "",
+        description: "",
+        img: "",
+      });
+      setFile(null);
     }
-  };
-  const handleClick = () => {
-    fileInputRef.current.click();
   };
 
   return (
@@ -81,26 +85,25 @@ const Create = () => {
               setPizzaDetails({ ...pizzaDetails, description: e.target.value })
             }
           />
-          <input
-            onChange={(e) => setFile(e.target.files[0])}
-            type="file"
-            placeholder="img"
-            value={pizzaDetails.img}
-            className="img-uploader"
-            ref={fileInputRef}
-            style={{ display: "none" }}
-            
-          />
-          <button className="upload-img" onClick={() => handleClick()}>
-            {file ? (
-              <div className="upload-container">
-                <p>Image Uploaded</p>
-                <PiSmileyStickerFill className="tick" />
-              </div>
-            ) : (
-              "Upload Image"
-            )}
-          </button>
+          <div className="choose-img-container">
+            <input
+              onChange={(e) => setFile(e.target.files[0])}
+              type="file"
+              placeholder="img"
+              value={pizzaDetails.img}
+              className="img-uploader"
+            />
+            <button className="upload-img">
+              {file ? (
+                <div className="upload-container">
+                  <p>Image Uploaded</p>
+                  <PiSmileyStickerFill className="tick" />
+                </div>
+              ) : (
+                "Upload Image"
+              )}
+            </button>
+          </div>
 
           <button className="create">Create</button>
         </form>

@@ -9,7 +9,8 @@
       display: flex;
       align-items: center;
       justify-content: space-evenly;
-        color: rgb(8, 177, 109);
+        /* color: rgb(8, 177, 109); */
+        color:white;
 }
 .navigation{
       width: 20%;
@@ -21,7 +22,8 @@
       list-style: none;
       font-family: 'Prata', serif;
       cursor: pointer;
-      color: rgb(8, 177, 109);
+      /* color: rgb(8, 177, 109); */
+      color:white;
 
 }
 .logo{

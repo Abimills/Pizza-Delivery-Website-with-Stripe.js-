@@ -5,19 +5,22 @@ font-family: 'Prata', serif;
 font-family: 'Sedgwick Ave Display', cursive; */
 .pizza-card {
   width: 20%;
-  height: max-content;
+  height: 500px;
   border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 10px;
+  border: 1px solid black;
+  margin-bottom: 1rem;;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .pizza-img {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  border-radius: 50%;
 }
 .description-container {
   width: 100%;
@@ -33,12 +36,14 @@ font-family: 'Sedgwick Ave Display', cursive; */
   font-size: 0.7rem;
   padding: 5px;
   border-radius: 50%;
-  background-color:rgb(8, 177, 109); ;
+  background-color:black ;
   
 }
 .pizza-name{
   font-size: 1.2rem;
   font-family: 'Amatic SC', cursive;
+  color:black;
+  font-weight: 900;
   
 }
 .description{
@@ -46,20 +51,26 @@ font-family: 'Sedgwick Ave Display', cursive; */
   font-family: 'Amatic SC', cursive;
   text-align: left ;
   font-size: 1.1rem;
+  color:white;
 }
 .add-to-cart{
-  background:rgb(8, 177, 109);;
-  color:white;
+  background-color: white;;
+  color:rgb(8, 177, 109);;
   padding: 10px 15px;
-  border: 1px solid rgb(8, 177, 109);;
   border-radius: 30px;
   font-family: 'Prata', serif;
   font-size: 0.6rem;
-
+  /* background:rgb(8, 177, 109);; */
+  background-color: black;
+  border:1px solid black;
+  color:white;
+  
 }
 .add-to-cart:hover{
   cursor: pointer;
-  background-color: transparent;;
   color: rgb(8, 177, 109);;
+  background-color: white;
+  border: 1px solid rgb(8, 177, 109);;
+ 
 
 }

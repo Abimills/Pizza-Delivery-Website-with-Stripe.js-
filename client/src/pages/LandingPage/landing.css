@@ -68,18 +68,34 @@
 .pizza-handle{
  width:250px;
  height: 250px;
- object-fit: contain;
+ object-fit: cover;
  margin-top: 0rem;
  margin-right: -8.5rem;
  z-index:4;
  transform: rotate(10deg);
- border: 10px solid rgb(8, 177, 109);;;
+ border: 10px solid black;;;
  border-radius: 50%;;
  /* background-color: red; */
  
 
  
  
+}
+.grey{
+  width:60px;
+  height: 60px;
+  object-fit: contain;
+  position: absolute;
+  top:-100px;
+  right:50px;
+}
+.bluer{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  position:absolute ;
+  bottom:-50px;
+  right:50px;
 }
 .greener{
   width: 200px;
@@ -98,9 +114,14 @@
   margin-left: -9rem;
   z-index: 7;
 }
+.layer2{
+  margin-top: -6rem;;
+
+}
 .pizza-container {
   width: 100%;
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   padding: 10px;
@@ -179,6 +200,7 @@
   font-size: 1.1rem;
   margin-bottom: -3rem;
   margin-top:-3rem;
+  color:white;
 }
 .main-header {
   text-align: center;
@@ -187,7 +209,8 @@
   font-family: 'Italianno', cursive;
   margin-bottom: -3rem;
   margin-top: -3rem;
-  color:rgb(8, 177, 109);
+  /* color:rgb(8, 177, 109); */
+  color:white;
 
 }
 .pizza-fam{
@@ -277,9 +300,12 @@ font-size: 2rem;
 .discover{
   /* width: 250px; */
   padding: 10px 25px;
-  background-color: rgb(8, 177, 109);;
-  border : 1px solid rgb(8, 177, 109);;
+  background-color: black;;
+  border : 1px solid black;
+    font-family: "Amatic SC", cursive;
+
   border-radius: 2px;
+  /* font-size:1.01rem; */
   color:white;
   margin-left: -1.7rem;
   cursor: pointer;
