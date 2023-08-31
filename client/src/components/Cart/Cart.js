@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import Order from "../CartOrder/Order";
 import "./cart.css";
+import { AppContext } from "../Context/Context";
 
 const Cart = () => {
+  const pizzas = JSON.parse(localStorage.getItem("ids"));
+  const {pizzaIds} = useContext(AppContext);
+  console.log('pizza ids', pizzaIds)
+  console.log('pizza ids local', pizzas)
   return (
     <div className="total-container">
       <div className="cart-container">

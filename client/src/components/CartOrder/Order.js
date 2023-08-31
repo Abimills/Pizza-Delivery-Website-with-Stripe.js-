@@ -13,7 +13,7 @@ const Order = () => {
         </div>
         <div className="inc-dec-order">
           <button className="dec"> -</button>
-          <p>1</p>
+          <p className='count-each'>1</p>
           <button className="inc"> +</button>
         </div>
         <p className="price">$8.50</p>

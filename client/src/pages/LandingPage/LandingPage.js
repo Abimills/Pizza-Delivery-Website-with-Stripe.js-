@@ -1,29 +1,54 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import greener from "../../assets/images/greener.png";
-import grey from "../../assets/images/grey.png";
+import grey from "../../assets/images/red2.png";
 import blue2 from "../../assets/images/blue2.png";
-import green from "../../assets/images/green.png";
 import slicer from "../../assets/images/slicer.png";
 import paparika from "../../assets/images/paparika.png";
 import tomatoe from "../../assets/images/tomatoe.png";
 import layered from "../../assets/images/layeredpic.png";
-import pizzafam from "../../assets/images/pizzafam.png";
 import coca from "../../assets/images/coca.png";
 import semi from "../../assets/images/semi2.png";
 import pizzaHandle from "../../assets/images/pizzamalet.png";
 import PizzaCard from "../../components/PizzaCard/PizzaCard";
 import "./landing.css";
+import Service from "../ServicePage/Service";
 const LandingPage = () => {
   const [data, setData] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("Fish");
+
+  const [filteredData, setFilteredData] = useState([]);
+  const [category, setCategory] = useState([]);
   const fetch = async () => {
     const res = await axios.get("http://localhost:4000/api/");
     setData(res?.data);
   };
+  const filterData = (data, category) => {
+    if (category === "All") {
+      setFilteredData(data?.pizzas);
+      setActiveCategory("All");
+    } else {
+      setFilteredData(
+        data?.pizzas?.filter(
+          (pizza) => pizza?.category.toLowerCase() === category.toLowerCase()
+        )
+      );
+      setActiveCategory(category);
+    }
+  };
+
   useEffect(() => {
     fetch();
   }, []);
-  console.log(data);
+  useEffect(() => {
+    // eslint-disable-next-line react/prop-types
+    setCategory([
+      "All",
+      ...new Set(data?.pizzas?.map((pizza) => pizza.category)),
+    ]);
+    filterData(data, "Fish");
+  }, [data]);
+  console.log(filteredData);
   return (
     <main className="mother-container">
       <div className="landing-page-container">
@@ -65,38 +90,30 @@ const LandingPage = () => {
         <div className="all-pizza-container">
           <h1 className="choose-header">Our Menu</h1>
           <div className="filter-pizza">
-            <button className="choose-btn chosen">All</button>
-            <button className="choose-btn">Vegan</button>
-            <button className="choose-btn">Fish</button>
-            <button className="choose-btn">Vegetarian</button>
-            <button className="choose-btn">Meat</button>
-            <button className="choose-btn">Random</button>
+            {/* <button className="choose-btn chosen">All</button> */}
+            {category?.map((category, index) => {
+              return (
+                <button
+                  className={
+                    activeCategory == category
+                      ? "choose-btn active-cat-btn"
+                      : "choose-btn"
+                  }
+                  key={index}
+                  onClick={() => filterData(data, category)}
+                >
+                  {category}
+                </button>
+              );
+            })}
           </div>
 
           <div className="pizza-card-container">
-            {data?.pizzas?.reverse().map((pizza) => {
+            {filteredData?.map((pizza) => {
               return <PizzaCard pizza={pizza} key={pizza._id} />;
             })}
           </div>
-          <div className="service-container">
-            <h1 className="service-header">Our Services</h1>
-            <div className="service-boxes">
-              <button className="one">Free delivery</button>
-              <button className="two">10 Minute after order</button>
-              <button className="three"> Delicious Food</button>
-            </div>
-            <div className="van-container">
-              <img src={green} alt="" className="greene" />
-              <img src={pizzafam} alt="" className="pizza-fam" />
-              <img src={paparika} alt="" className="collect" />
-              <img src={tomatoe} alt="" className="collect come" />
-            </div>
-            <div className="fam-container">
-              <p>Visit Our Resturant</p>
-              <h3>PizzaFam</h3>
-              <p>enjoy it with every bite</p>
-            </div>
-          </div>
+          <Service />
         </div>
       </div>
     </main>

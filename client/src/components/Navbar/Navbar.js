@@ -10,10 +10,15 @@ const Navbar = () => {
         <Link to="/" className="link">
           <li>Home</li>
         </Link>
+        <Link to={"/service"} className="link">
+          <li>Menu</li>
+        </Link>
         <Link to="/about" className="link">
           <li>About</li>
         </Link>
-        <li>Service</li>
+        <Link to={"/service"} className="link">
+          <li>Service</li>
+        </Link>
       </ul>
       <div className="logo">
         <h1 className="logo-text">PizzaFam</h1>
@@ -26,9 +31,9 @@ const Navbar = () => {
         </Link>
       </div>
       <Link to={"/cart"}>
-      <RiShoppingCart2Fill className="cart" />
+        <RiShoppingCart2Fill className="cart" />
       </Link>
-      <img src={leave} alt="" className="leave" />
+      {/* <img src={leave} alt="" className="leave" /> */}
     </nav>
   );
 };

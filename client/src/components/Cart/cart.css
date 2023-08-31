@@ -31,11 +31,13 @@
 }
 .price {
   /* font-family: 'Prata', serif; */
-  font-size: 1.3rem;
+  font-size: 0.8rem;
+  color:white;
+    font-family: "Prata", serif;
 }
 .close {
   font-size: 1.4rem;
-  color: gray;
+  color: rgb(171, 7, 7);
   margin-right: 5rem;
 }
 .total-container {
@@ -53,6 +55,7 @@
   flex-direction: column;
   gap: 3rem;
   border-radius: 10px;
+  border: 1px dotted black;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .total h3 {
@@ -63,24 +66,27 @@
   width: 97%;
   padding: 10px;
   margin: 0 1rem;
-  background-color: rgb(8, 177, 109);
-  border: 1px solid rgb(8, 177, 109);
+  background-color: white;
+  border: 1px solid white;
   border-radius: 3px;
-  color: white;
+  color: black;
   cursor: pointer;
+  font-family: "Prata", serif;
 }
 .subtotal {
   font-family: "Amatic SC", cursive;
+  color:white;
 
 }
 .total-price{
       font-size: 2rem;
+      color:white;
 }
 .line {
   content: none;
   width: 78%;
   /* text-align: center; */
-  background-color: rgb(201, 197, 197);
+  background-color: black;
   height: 2px;
   border-radius: 60px;
   margin-left: 120px;
@@ -94,7 +100,7 @@
 .size {
   font-size: 0.7rem;
   margin-top: -1rem;
-  color: rgb(8, 177, 109);
+  color: black;
   font-weight: 800;
 }
 .inc-dec-order {
@@ -102,15 +108,23 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  border: 1px solid gray;
+  border: 1px solid white;
   width: 100px;
   height: 25px;
   border-radius: 20px;
+
 }
+
 .inc,
 .dec {
   background-color: transparent;
   border: none;
+  color:white;
+}
+.count-each{
+  color:white;
+  font-family: "Prata", serif;
+  font-size: 0.9rem;
 }
 
 .order-img {
@@ -121,4 +135,5 @@
 .order-name {
   font-family: "Prata", serif;
   font-size: 0.8rem;
+  color:white;
 }
