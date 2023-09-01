@@ -5,11 +5,15 @@ import { useContext } from "react";
 import { AppContext } from "../Context/Context";
 const PizzaCard = ({ pizza }) => {
   const { _id, name, price, description, img } = pizza;
-  const { pizzaIds, setPizzaIds } = useContext(AppContext);
-  console.log(pizzaIds);
+  const { dispatch, cart } = useContext(AppContext);
+
   const handleAddCart = (id) => {
-    setPizzaIds([...pizzaIds, id]);
-    localStorage.setItem("ids", JSON.stringify([...pizzaIds, id]));
+    const find = cart?.pizzaIds?.find((item) => item === id);
+    if (find) {
+      alert(`You already added item to Cart`);
+    } else {
+      dispatch({ type: "ADD_TO_CART", payload: id });
+    }
   };
 
   return (

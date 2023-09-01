@@ -13,6 +13,7 @@ import pizzaHandle from "../../assets/images/pizzamalet.png";
 import PizzaCard from "../../components/PizzaCard/PizzaCard";
 import "./landing.css";
 import Service from "../ServicePage/Service";
+import Menu from "../../components/Menu/Menu";
 const LandingPage = () => {
   const [data, setData] = useState([]);
   const [activeCategory, setActiveCategory] = useState("Fish");
@@ -83,38 +84,12 @@ const LandingPage = () => {
             <img src={layered} alt="slicer" className="layered" />
             {/* <img src={layered} alt="slicer" className="layered" />
             <img src={layered} alt="slicer" className="layered layer2" /> */}
-            <img src={grey} alt="grey" className="grey" />
+            {/* <img src={grey} alt="grey" className="grey" /> */}
             <img src={blue2} alt="grey" className="bluer" />
           </div>
         </div>
-        <div className="all-pizza-container">
-          <h1 className="choose-header">Our Menu</h1>
-          <div className="filter-pizza">
-            {/* <button className="choose-btn chosen">All</button> */}
-            {category?.map((category, index) => {
-              return (
-                <button
-                  className={
-                    activeCategory == category
-                      ? "choose-btn active-cat-btn"
-                      : "choose-btn"
-                  }
-                  key={index}
-                  onClick={() => filterData(data, category)}
-                >
-                  {category}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="pizza-card-container">
-            {filteredData?.map((pizza) => {
-              return <PizzaCard pizza={pizza} key={pizza._id} />;
-            })}
-          </div>
-          <Service />
-        </div>
+        <Menu />
+        <Service />
       </div>
     </main>
   );

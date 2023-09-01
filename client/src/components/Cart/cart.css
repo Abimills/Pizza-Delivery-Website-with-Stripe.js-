@@ -5,9 +5,32 @@
 /* font-family: 'Sedgwick Ave Display', cursive; */
 
 .cart-header {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   font-family: "Prata", serif;
-  margin: 1rem 0.4rem;
-  font-size: 1.3rem;
+  margin: 0rem 0.2rem;
+  font-size: 1.6rem;
+  position: relative;
+  top: 10px;
+  margin-bottom: -6rem;
+  letter-spacing: 2px;
+  color: white;
+  background-image: url("../../assets/images/text-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.nothing-cart {
+  width: 300px;
+  height: 300px;
+
+  font-family: "Prata", serif;
+
+  color: white;
+  margin-left: 50%;
+  margin-top: 20%;
 }
 .cart-container {
   width: 70%;
@@ -32,8 +55,8 @@
 .price {
   /* font-family: 'Prata', serif; */
   font-size: 0.8rem;
-  color:white;
-    font-family: "Prata", serif;
+  color: white;
+  font-family: "Prata", serif;
 }
 .close {
   font-size: 1.4rem;
@@ -75,12 +98,11 @@
 }
 .subtotal {
   font-family: "Amatic SC", cursive;
-  color:white;
-
+  color: white;
 }
-.total-price{
-      font-size: 2rem;
-      color:white;
+.total-price {
+  font-size: 2rem;
+  color: white;
 }
 .line {
   content: none;
@@ -112,28 +134,29 @@
   width: 100px;
   height: 25px;
   border-radius: 20px;
-
 }
 
 .inc,
 .dec {
   background-color: transparent;
   border: none;
-  color:white;
+  color: white;
+  cursor: pointer;
 }
-.count-each{
-  color:white;
+.count-each {
+  color: white;
   font-family: "Prata", serif;
   font-size: 0.9rem;
 }
 
 .order-img {
   width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
 .order-name {
   font-family: "Prata", serif;
   font-size: 0.8rem;
-  color:white;
+  color: white;
 }

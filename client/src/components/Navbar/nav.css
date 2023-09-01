@@ -24,6 +24,19 @@
       cursor: pointer;
       /* color: rgb(8, 177, 109); */
       color:white;
+      margin-left: 0.8rem;;
+
+}
+.menu-li{
+      display: flex;
+      align-items: center;
+      gap:0.1rem;
+}
+.slice-of-pizza{
+font-size: 1.5rem;
+color:black;
+margin-left: -0.2rem;
+margin-top: 0.4rem;
 
 }
 .logo{

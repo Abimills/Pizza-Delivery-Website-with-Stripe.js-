@@ -1,6 +1,7 @@
 import "./nav.css";
 import leave from "../../assets/images/leave1.png";
 import { RiShoppingCart2Fill } from "react-icons/ri";
+import { IoMdPizza } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -10,8 +11,10 @@ const Navbar = () => {
         <Link to="/" className="link">
           <li>Home</li>
         </Link>
-        <Link to={"/service"} className="link">
-          <li>Menu</li>
+        <Link to={"/menu"} className="link">
+          <li className="menu-li">
+            Menu <IoMdPizza  className="slice-of-pizza"/>
+          </li>
         </Link>
         <Link to="/about" className="link">
           <li>About</li>
