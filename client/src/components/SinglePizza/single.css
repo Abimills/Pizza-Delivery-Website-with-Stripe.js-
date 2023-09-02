@@ -41,12 +41,16 @@
   margin-top: 3rem;
 }
 .real-price {
-  
   color: white;
-
+text-transform: capitalize;
   background-color: black;
-  padding: 5px;
-  border-radius: 50%;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  border-radius: 10px;
+  padding: 5px 10px;
   margin-left: -26px;
   margin-bottom: -1.5rem;
   margin-top: 15px;
@@ -62,20 +66,19 @@
   margin-top: 2rem;
   text-decoration: underline;
 }
-.number-pizza-container{
-      display: flex;
-      align-items: center;
+.number-pizza-container {
+  display: flex;
+  align-items: center;
 }
-.number-counter{
-      width: 50px;
-      height: 30px;
-      border-radius: 10px;
-      border:1px solid white;
-      outline: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
+.number-counter {
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid white;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .single-pizza-description {
   font-family: "Amatic SC", cursive;

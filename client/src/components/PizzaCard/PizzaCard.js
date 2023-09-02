@@ -15,6 +15,7 @@ const PizzaCard = ({ pizza }) => {
       dispatch({ type: "ADD_TO_CART", payload: id });
     }
   };
+  
 
   return (
     <div className="pizza-card">

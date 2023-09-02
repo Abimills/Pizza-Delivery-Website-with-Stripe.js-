@@ -89,7 +89,6 @@ const LandingPage = () => {
           </div>
         </div>
         <Menu />
-        <Service />
       </div>
     </main>
   );

@@ -5,14 +5,16 @@ import Contact from "../Contact/Contact";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import "./home.css"
+import Service from "../ServicePage/Service";
 
 const Home = () => {
   return (
     <div >
       {/* <Navbar /> */}
-      <LandingPage />
+      {/* <LandingPage /> */}
       <About />
-      <Contact />
+      {/* <Service /> */}
+      {/* <Contact /> */}
       {/* <Footer /> */}
     </div>
   );

@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from "react";
-import Order from "../Order/Order";
+import { IoCloseOutline } from "react-icons/io5";
 import "./cart.css";
 import { AppContext } from "../Context/Context";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart } = useContext(AppContext);
+  const { cart, dispatch } = useContext(AppContext);
   const [data, setData] = useState([]);
   const [total, setTotal] = useState(0);
-  console.log(cart);
+  const [orderNumber, setOrderNumber] = useState(1);
   useEffect(() => {
     const fetchPizzas = async () => {
       try {
@@ -17,7 +18,15 @@ const Cart = () => {
             axios.get(`http://localhost:4000/api/${id}`)
           )
         );
-        const fetchedData = responses.map((res) => res?.data?.singlePizza);
+        const fetchedData = responses.map((res) => {
+          return {
+            ...res?.data?.singlePizza,
+            size:
+              cart.sizes[res?.data?.singlePizza?._id] ||
+              res?.data?.singlePizza?.size,
+            number: cart.items[res?.data?.singlePizza._id] || 1,
+          };
+        });
         setData(fetchedData);
       } catch (error) {
         console.log({
@@ -28,16 +37,57 @@ const Cart = () => {
     };
     fetchPizzas();
   }, [cart]);
-  const calculateTotal = () => {
-    setTotal(
-      data?.reduce((acc, pizza) => acc + pizza?.price * pizza?.quantity, 0)
-    );
-    console.log(data);
+
+  const handleDelete = (idToDelete) => {
+    dispatch({ type: "REMOVE_FROM_CART", payload: idToDelete });
+  };
+  const handleCounter = (action, id) => {
+    const updatedData = data.map((pizza) => {
+      if (pizza?._id === id) {
+        let newNumber = pizza.number;
+        if (action === "add") {
+          newNumber += 1;
+        } else if (action === "subtract" && newNumber > 1) {
+          newNumber -= 1;
+        }
+        dispatch({
+          type: "UPDATE_CART_ITEM",
+          payload: {
+            id: pizza?._id,
+            quantity: newNumber,
+          },
+        });
+        return {
+          ...pizza,
+          number: newNumber,
+        };
+      } else {
+        return pizza;
+      }
+    });
+    setData(updatedData);
+  };
+  const handleSizePrice = (price, size) => {
+    if (size === "small") {
+      return price - 4;
+    } else if (size === "medium") {
+      return price;
+    } else if (size === "large") {
+      return price + 4;
+    }
   };
 
   useEffect(() => {
+    const calculateTotal = () => {
+      setTotal(
+        data?.reduce((acc, pizza) => {
+          const newPrice = handleSizePrice(pizza?.price, pizza?.size);
+          return acc + newPrice * pizza?.number;
+        }, 0)
+      );
+    };
     calculateTotal();
-  }, [data]);
+  }, [cart, data]);
   return (
     <div className="total-container">
       <div className="cart-container">
@@ -46,7 +96,42 @@ const Cart = () => {
           <h1 className="nothing-cart">Your Cart is Empty</h1>
         ) : (
           data?.map((pizza) => {
-            return <Order pizza={pizza} key={pizza._id} />;
+            const { _id, img, name, number, size, price } = pizza;
+            return (
+              <div className="underline">
+                <div className="cart-order">
+                  <Link to={`/detail/${_id}`}>
+                    <img src={img} alt="" className="order-img" />
+                  </Link>
+                  <div className="size-container">
+                    <p className="order-name">{name}</p>
+                    <p className="size">{size}</p>
+                  </div>
+                  <div className="inc-dec-order">
+                    <button
+                      className="dec"
+                      onClick={() => handleCounter("subtract", _id)}
+                    >
+                      -
+                    </button>
+                    <p className="count-each">{number}</p>
+                    <button
+                      className="inc"
+                      onClick={() => handleCounter("add", _id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <p className="price">${handleSizePrice(price, size)}</p>
+                  <p className="price">{size}</p>
+                  <IoCloseOutline
+                    className="close"
+                    onClick={() => handleDelete(_id)}
+                  />
+                </div>
+                <div className="line"></div>
+              </div>
+            );
           })
         )}
       </div>

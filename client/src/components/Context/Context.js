@@ -2,6 +2,8 @@ import { createContext, useEffect, useReducer, useState } from "react";
 export const AppContext = createContext();
 const initialState = {
   pizzaIds: JSON.parse(localStorage.getItem("cart")) || [],
+  items: {},
+  sizes: {},
 };
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -16,6 +18,23 @@ const cartReducer = (state, action) => {
         pizzaIds: [
           ...state.pizzaIds.filter((pizza) => pizza !== action.payload),
         ],
+      };
+    case "UPDATE_CART_ITEM":
+      const { id, quantity } = action.payload;
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          [id]: quantity,
+        },
+      };
+    case "UPDATE_CART_SIZE":
+      return {
+        ...state,
+        sizes: {
+          ...state.sizes,
+          [action.payload.id]: action.payload.size,
+        },
       };
     case "SET_CART":
       return {
@@ -37,6 +56,7 @@ const PizzaProvider = ({ children }) => {
       dispatch({ type: "SET_CART", payload: storedIds });
     }
   }, []);
+  console.log(state.sizes);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.pizzaIds));
   }, [state.pizzaIds]);

@@ -153,7 +153,8 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border-radius: 50%;
+  cursor: pointer;
+  border-radius: 50%;cursor: pointer;
 }
 .order-name {
   font-family: "Prata", serif;

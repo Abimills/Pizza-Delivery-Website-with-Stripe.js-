@@ -1,14 +1,17 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import peel from "../../assets/images/pizzahandle.png";
 import gray from "../../assets/images/gray.png";
 import blue from "../../assets/images/blue.png";
 import { useParams } from "react-router-dom";
 import { GiFullPizza } from "react-icons/gi";
 import "./single.css";
+import { AppContext } from "../Context/Context";
 const SinglePizza = () => {
   const { id } = useParams();
+  const { dispatch, cart } = useContext(AppContext);
   const [data, setData] = useState([]);
+  const [pizzaSize, SetPizzaSize] = useState(cart.sizes[id] || "medium");
   console.log(data);
 
   const fetch = async () => {
@@ -22,10 +25,57 @@ const SinglePizza = () => {
       });
     }
   };
+  const handleSize = (id, pizzaSize) => {
+    if (pizzaSize === "small") {
+      SetPizzaSize("small");
+      dispatch({
+        type: "UPDATE_CART_SIZE",
+        payload: {
+          id,
+          size: pizzaSize,
+        },
+      });
+    } else if (pizzaSize === "medium") {
+      SetPizzaSize("medium");
+      dispatch({
+        type: "UPDATE_CART_SIZE",
+        payload: {
+          id,
+          size: pizzaSize,
+        },
+      });
+    } else if (pizzaSize === "large") {
+      SetPizzaSize("large");
+      dispatch({
+        type: "UPDATE_CART_SIZE",
+        payload: {
+          id,
+          size: pizzaSize,
+        },
+      });
+    }
+  };
 
   useEffect(() => {
     fetch();
   }, []);
+  const handleAddCart = (id) => {
+    const find = cart?.pizzaIds?.find((item) => item === id);
+    if (find) {
+      alert(`You already added item to Cart`);
+    } else {
+      dispatch({ type: "ADD_TO_CART", payload: id });
+    }
+  };
+  const handleSizePrice = (price, size) => {
+    if (size === "small") {
+      return price - 4;
+    } else if (size === "medium") {
+      return price;
+    } else if (size === "large") {
+      return price + 4;
+    }
+  };
 
   return (
     <div className="single-pizza-container">
@@ -37,23 +87,34 @@ const SinglePizza = () => {
           <p className="price-indiv">Choose your size</p>
 
           <div className="pizza-size-contain">
-
             <div className="choose-container">
-              <GiFullPizza className="small" />
+              <GiFullPizza
+                className="small"
+                onClick={() => handleSize(data?.singlePizza?._id, "small")}
+              />
               <span>Small</span>
             </div>
             <div className="choose-container">
-              <GiFullPizza className="medium" />
+              <GiFullPizza
+                className="medium"
+                onClick={() => handleSize(data?.singlePizza?._id, "medium")}
+              />
               <span>Medium</span>
             </div>
             <div className="choose-container">
-              <GiFullPizza className="large" />
+              <GiFullPizza
+                className="large"
+                onClick={() => handleSize(data?.singlePizza?._id, "large")}
+              />
               <span>Large</span>
             </div>
           </div>
         </div>
         <p className="real-price">
-          {"Medium " + ":" + "$" + data?.singlePizza?.price}
+          {`${pizzaSize} :   $${handleSizePrice(
+            data?.singlePizza?.price,
+            pizzaSize
+          )}`}
         </p>
         <p className="single-pizza-name">{data?.singlePizza?.name}</p>
         <div className="desc-written">
@@ -63,8 +124,12 @@ const SinglePizza = () => {
           </p>
         </div>
         <div className="number-pizza-container">
-                <input type="number" className="number-counter" placeholder="1"/>
-        <button className="add-to-cart single-btn">Add to Cart</button>
+          <button
+            className="add-to-cart single-btn"
+            onClick={() => handleAddCart(data?.singlePizza?._id)}
+          >
+            Add to Cart
+          </button>
         </div>
         <img src={gray} alt="" className="gray" />
       </div>
