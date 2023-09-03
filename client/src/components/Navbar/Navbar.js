@@ -3,12 +3,16 @@ import leave from "../../assets/images/leave1.png";
 import { RiShoppingCart2Fill } from "react-icons/ri";
 import { IoMdPizza } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { TfiClose } from "react-icons/tfi";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="navbar-container">
-      <ul className="navigation">
+      <ul className={isOpen ? "navigation" : "navigation is-closed"}>
         <Link to="/" className="link">
           <li>Home</li>
         </Link>
@@ -38,7 +42,17 @@ const Navbar = () => {
         <Link to={"/cart"}>
           <RiShoppingCart2Fill className="cart" />
         </Link>
-        <RxHamburgerMenu className="hamburger-toggle" />
+        {isOpen ? (
+          <TfiClose
+            className="hamburger-toggle"
+            onClick={() => setIsOpen(false)}
+          />
+        ) : (
+          <RxHamburgerMenu
+            className="hamburger-toggle"
+            onClick={() => setIsOpen(true)}
+          />
+        )}
       </div>
       {/* <img src={leave} alt="" className="leave" /> */}
     </nav>

@@ -24,7 +24,7 @@ function App() {
         <Route path="/service" element={<Service />} />
         <Route path="/create" element={<Create />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

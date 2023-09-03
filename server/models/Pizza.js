@@ -15,11 +15,14 @@ const pizzaSchema = new mongoose.Schema({
     type: Number,
     required: [true, "price is required"],
   },
+  size: {
+    type: String,
+    default: "medium",
+  },
+
   description: {
     type: String,
   },
-
 });
-const Pizza = mongoose.model("Pizza",pizzaSchema);
+const Pizza = mongoose.model("Pizza", pizzaSchema);
 export default Pizza;
-
