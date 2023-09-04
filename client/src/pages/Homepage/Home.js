@@ -6,16 +6,18 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import "./home.css"
 import Service from "../ServicePage/Service";
+import Menu from "../../components/Menu/Menu";
 
 const Home = () => {
   return (
-    <div >
-      {/* <Navbar /> */}
+    <div>
+     
       <LandingPage />
+      <Menu />
       <About />
       <Service />
       <Contact />
-      <Footer />
+    
     </div>
   );
 };

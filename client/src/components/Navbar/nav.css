@@ -164,6 +164,7 @@
     display: none;
   }
   .navigation {
+   
     position: fixed;
     right: 0;
     top: -16px;
@@ -176,10 +177,12 @@
     backdrop-filter: blur(5px);
   }
   .is-closed {
-    width: 0;
-    /* height: 0; */
-    right: -40px;
+    width: 0px;
+    display: none;
+    
   }
+  
+  
 }
 @media screen and (max-width: 470px) {
   .logo {

@@ -62,7 +62,7 @@ const LandingPage = () => {
               </div>
 
               <h1 className="main-header">
-                {" "}
+                
                 <span>D</span>elicious!
               </h1>
               <h4 className="pizza-word">Pizza</h4>
@@ -78,7 +78,6 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="pizza-container">
-            <img src={slicer} alt="slicer" className="slicer" />
             <img src={pizzaHandle} alt="" className="pizza-handle" />
             <img src={semi} alt="pizza" className="semi-circle" />
             <img src={layered} alt="slicer" className="layered" />
@@ -88,7 +87,7 @@ const LandingPage = () => {
             <img src={blue2} alt="grey" className="bluer" />
           </div>
         </div>
-        <Menu />
+       
       </div>
     </main>
   );

@@ -29,7 +29,6 @@ const Menu = () => {
     fetch();
   }, []);
   useEffect(() => {
-    // eslint-disable-next-line react/prop-types
     setCategory([
       "All",
       ...new Set(data?.pizzas?.map((pizza) => pizza.category)),
@@ -40,7 +39,6 @@ const Menu = () => {
     <div className="all-pizza-container">
       <h1 className="choose-header">Our Menu</h1>
       <div className="filter-pizza">
-        {/* <button className="choose-btn chosen">All</button> */}
         {category?.map((category, index) => {
           return (
             <button
@@ -59,6 +57,7 @@ const Menu = () => {
       </div>
       <div className="pizza-card-container">
         {filteredData?.map((pizza) => {
+         
           return <PizzaCard pizza={pizza} key={pizza._id} />;
         })}
       </div>
