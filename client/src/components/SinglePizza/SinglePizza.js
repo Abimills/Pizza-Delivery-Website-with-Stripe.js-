@@ -136,7 +136,7 @@ const SinglePizza = () => {
       <div className="righter-side">
         <img src={`${data?.singlePizza?.img}`} alt="" className="pizza-indiv" />
         <img src={peel} alt="" className="peel" />
-        <img src={blue} alt="" className="blue" />
+        {/* <img src={blue} alt="" className="blue" /> */}
       </div>
     </div>
   );

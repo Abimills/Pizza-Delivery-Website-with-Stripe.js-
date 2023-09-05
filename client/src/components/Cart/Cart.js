@@ -123,7 +123,7 @@ const Cart = () => {
                     </button>
                   </div>
                   <p className="price">${handleSizePrice(price, size)}</p>
-                  <p className="price">{size}</p>
+                  <p className="price size-price">{size}</p>
                   <IoCloseOutline
                     className="close"
                     onClick={() => handleDelete(_id)}
@@ -137,9 +137,13 @@ const Cart = () => {
       </div>
       <div className="total">
         <h3>Thank you for shoping with us</h3>
-        <p className="subtotal">
-          Subtotal: <span className="total-price">${total} </span>{" "}
-        </p>
+        <div className="subtotal-contain">
+          <p>Tax included. Shipping calculated at checkout.</p>
+
+          <p className="subtotal">
+            Subtotal:{" "}<span className="total-price"> ${total}.00 </span>{" "}
+          </p>
+        </div>
         <button className="checkout">Checkout</button>
       </div>
     </div>
