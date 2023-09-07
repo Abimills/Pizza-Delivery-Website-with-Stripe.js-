@@ -2,7 +2,13 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 import pizzaRouter from "./routes/pizza.js";
+
+
+
 import cors from "cors";
+import paymentRouter from "./routes/payment.js";
+
+// app.use(express.static("public")); //check this for any erro that may cause
 
 dotenv.config();
 const app = express();
@@ -17,14 +23,15 @@ const corsOptions = {
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
- 
+
 app.use("/api", pizzaRouter);
+app.use("/payment", paymentRouter);
 
 // app.get("/", (req, res) => {
-//   res.status(200).json({ message: "I hope it work" });
+//   const path = resolve(process.env.STATIC_DIR + "/index.html");
+//   res.sendFile(path);
 // });
 
-// app.use("/api/pizza",pizzaRouter);
 // database connection
 const connect = async () => {
   try {
@@ -34,6 +41,12 @@ const connect = async () => {
     console.log(error);
   }
 };
+
+// stripe integration backend
+
+// app.use(express.static(process.env.STATIC_DIR));
+
+// =================
 
 //the environment port
 const port = process.env.PORT || 5000;

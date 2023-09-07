@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Italianno&family=Prata&family=Sedgwick+Ave+Display&display=swap");
+/* font-family: 'Amatic SC', cursive; */
+/* font-family: 'Italianno', cursive; */
+/* font-family: 'Prata', serif; */
+/* font-family: 'Sedgwick Ave Display', cursive; */
+.payment-form {
+  width: 50%;
+  padding: 40px 20px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+.pay-btm {
+  padding: 10px 20px;
+  background-color: rgb(120, 120, 240);
+  color: white;
+  border: 1px solid rgb(120, 120, 240);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.payment-header {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "Prata", serif;
+}
+.pay-btm:hover {
+  background-color: transparent;
+  color: rgb(120, 120, 240);
+}
+
+@media screen and (max-width: 800px){
+ .payment-form{
+      width: 80%;
+ }
+}
+@media screen and (max-width: 480px){
+ .payment-form{
+      width: 80%;
+ }
+ .payment-header{
+      font-size:  1.1rem;
+ }
+}
+@media screen and (max-width: 360px){
+ 
+ .pay-btm{
+      padding: 7px 10px;
+
+ }
+ 
+}

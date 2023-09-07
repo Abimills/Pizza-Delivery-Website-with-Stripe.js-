@@ -48,6 +48,7 @@ const cartReducer = (state, action) => {
   }
 };
 const PizzaProvider = ({ children }) => {
+  const [totalAmount,setTotalAmount] = useState(10000);
   const [state, dispatch] = useReducer(cartReducer, initialState);
   // const [pizzaIds, setPizzaIds] = useState([]);
   useEffect(() => {
@@ -61,7 +62,7 @@ const PizzaProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(state.pizzaIds));
   }, [state.pizzaIds]);
   return (
-    <AppContext.Provider value={{ cart: state, dispatch }}>
+    <AppContext.Provider value={{ cart: state, dispatch, totalAmount,setTotalAmount }}>
       {children}
     </AppContext.Provider>
   );

@@ -9,6 +9,9 @@ import Home from "./pages/Homepage/Home";
 import { Routes, Route } from "react-router-dom";
 import Service from "./pages/ServicePage/Service";
 import Menu from "./components/Menu/Menu";
+import PaymentForm from "./components/PaymentForm/PaymentForm";
+import Payment from "./components/Stripe/Payment";
+import Completion from "./components/Stripe/Completion";
 
 function App() {
   return (
@@ -23,6 +26,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/service" element={<Service />} />
         <Route path="/create" element={<Create />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/complete" element={<Completion />} />
       </Routes>
       <Footer />
     </div>

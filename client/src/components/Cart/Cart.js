@@ -4,11 +4,13 @@ import "./cart.css";
 import { AppContext } from "../Context/Context";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import PaymentForm from "../PaymentForm/PaymentForm";
 
 const Cart = () => {
-  const { cart, dispatch } = useContext(AppContext);
+  const { cart, dispatch, totalAmount, setTotalAmount } =
+    useContext(AppContext);
   const [data, setData] = useState([]);
-  const [total, setTotal] = useState(0);
+
   const [orderNumber, setOrderNumber] = useState(1);
   useEffect(() => {
     const fetchPizzas = async () => {
@@ -79,15 +81,18 @@ const Cart = () => {
 
   useEffect(() => {
     const calculateTotal = () => {
-      setTotal(
+      setTotalAmount(
         data?.reduce((acc, pizza) => {
           const newPrice = handleSizePrice(pizza?.price, pizza?.size);
+
           return acc + newPrice * pizza?.number;
         }, 0)
       );
     };
     calculateTotal();
   }, [cart, data]);
+  // stripe logic
+
   return (
     <div className="total-container">
       <div className="cart-container">
@@ -141,10 +146,12 @@ const Cart = () => {
           <p>Tax included. Shipping calculated at checkout.</p>
 
           <p className="subtotal">
-            Subtotal:{" "}<span className="total-price"> ${total}.00 </span>{" "}
+            Subtotal: <span className="total-price"> ${totalAmount}.00 </span>{" "}
           </p>
         </div>
+        {/* <Link to={"/payment"}> */}
         <button className="checkout">Checkout</button>
+        {/* </Link> */}
       </div>
     </div>
   );
