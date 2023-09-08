@@ -101,6 +101,12 @@
   font-size: 2rem;
   color: rgb(8, 177, 109);
 }
+.hint{
+  font-size:.9rem;
+ margin-top:-1rem;
+  font-family: 'Amatic SC', cursive;
+
+}
 .create {
   padding: 10px;
   width: 50%;

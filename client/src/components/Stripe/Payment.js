@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import axios from "axios";
 import "./payment.css";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
@@ -17,28 +18,29 @@ function Payment() {
     });
   }, []);
   const fetchIntent = async () => {
-    const response = await fetch(
+    const totalInCents = totalAmount * 100;
+
+    const response = await axios.post(
       "http://localhost:4000/payment/create-payment-intent",
-      { method: "POST", body: JSON.stringify({ total: 100 }) }
+      { total: totalInCents }
     );
-    const data = await response.json();
-    setClientSecret(data?.clientSecret);
+    setClientSecret(response?.data?.clientSecret);
   };
 
   useEffect(() => {
-    fetch("http://localhost:4000/payment/create-payment-intent", {
-      method: "POST",
-      body: JSON.stringify({ total: 300 }),
-    }).then(async (result) => {
-      var { clientSecret } = await result.json();
-      setClientSecret(clientSecret);
-    });
-// fetchIntent();
+    // fetch("http://localhost:4000/payment/create-payment-intent", {
+    //   method: "POST",
+    //   body: JSON.stringify({ total: 300 }),
+    // }).then(async (result) => {
+    //   var { clientSecret } = await result.json();
+    //   setClientSecret(clientSecret);
+    // });
+    fetchIntent();
   }, []);
 
   return (
     <>
-      <h1 className="payment-header">Total : {totalAmount}</h1>
+      <h1 className="payment-header">Total : ${totalAmount}.00</h1>
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={{ clientSecret }}>
           <CheckoutForm />

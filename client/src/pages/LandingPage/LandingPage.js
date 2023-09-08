@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import greener from "../../assets/images/greener.png";
-import grey from "../../assets/images/red2.png";
 import blue2 from "../../assets/images/blue2.png";
-import slicer from "../../assets/images/slicer.png";
 import paparika from "../../assets/images/paparika.png";
 import tomatoe from "../../assets/images/tomatoe.png";
 import layered from "../../assets/images/layeredpic.png";
 import coca from "../../assets/images/coca.png";
 import semi from "../../assets/images/semi2.png";
 import pizzaHandle from "../../assets/images/pizzamalet.png";
-import PizzaCard from "../../components/PizzaCard/PizzaCard";
 import "./landing.css";
-import Service from "../ServicePage/Service";
-import Menu from "../../components/Menu/Menu";
+import { Link } from "react-router-dom";
 const LandingPage = () => {
   const [data, setData] = useState([]);
   const [activeCategory, setActiveCategory] = useState("Fish");
@@ -49,7 +45,6 @@ const LandingPage = () => {
     ]);
     filterData(data, "Fish");
   }, [data]);
-  console.log(filteredData);
   return (
     <main className="mother-container">
       <div className="landing-page-container">
@@ -62,32 +57,31 @@ const LandingPage = () => {
               </div>
 
               <h1 className="main-header">
-                
                 <span>D</span>elicious!
               </h1>
               <h4 className="pizza-word">Pizza</h4>
             </div>
             <p className="pizza-yari">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio
-              laborum tempore iste.
+              At our pizza house, we're dedicated to crafting delicious
+              memories, one slice at a time. Your satisfaction is our priority,
+              and we're committed to delivering the best pizza experience you've
+              ever had
             </p>
             <div className="coca-container">
               <img src={greener} alt="coca" className="greener" />
               <img src={coca} alt="coca" className="coca" />
-              <button className="discover">Discover for your self</button>
+              <Link to={"/menu"}>
+                <button className="discover">Discover for your self</button>
+              </Link>
             </div>
           </div>
           <div className="pizza-container">
             <img src={pizzaHandle} alt="" className="pizza-handle" />
             <img src={semi} alt="pizza" className="semi-circle" />
             <img src={layered} alt="slicer" className="layered" />
-            {/* <img src={layered} alt="slicer" className="layered" />
-            <img src={layered} alt="slicer" className="layered layer2" /> */}
-            {/* <img src={grey} alt="grey" className="grey" /> */}
             <img src={blue2} alt="grey" className="bluer" />
           </div>
         </div>
-       
       </div>
     </main>
   );

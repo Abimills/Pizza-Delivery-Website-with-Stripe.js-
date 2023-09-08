@@ -74,53 +74,63 @@
 }
 .total {
   width: 30%;
-  /* height: 300px; */
-  background-color: rgba(216, 241, 203, 0.1);
+  height:max-content;
+  background-color: white;
   backdrop-filter: blur(1px);
-  padding: 10px;
+  padding: 20px 10px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   gap: 3rem;
-  border-radius: 10px;
-  border: 1px dotted black;
-  margin-top: -5rem;
+  /* border-radius: 10px; */
+  /* border: 1px dotted black; */
+  /* margin-top: -5rem; */
+  margin-right: 1rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .subtotal-contain {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content:center;
   flex-direction: column;
+  
 }
 .subtotal-contain p {
   font-family: "Prata", serif;
-  color: white;
+  color: rgb(120, 120, 240);;
+  font-size: 1.3rem;
+  font-family: 'Amatic SC', cursive;
+
 }
 .total h3 {
   font-family: "Prata", serif;
+  color: rgb(120, 120, 240);;;
+  font-size: 2rem;
+  font-family: 'Italianno', cursive;
+
 }
 
 .checkout {
   width: 97%;
-  padding: 10px;
+  padding: 10px 40px;
   margin: 0 1rem;
-  background-color: white;
-  border: 1px solid white;
+  background-color: rgb(120, 120, 240);;;
+  border: 1px solid rgb(120, 120, 240);;
   border-radius: 3px;
-  color: black;
+  color: white;;
   cursor: pointer;
+  font-size: .8rem;
   font-family: "Prata", serif;
 }
 .subtotal {
   font-family: "Prata", serif;
-  color: white;
+  color: rgb(120, 120, 240);;
 }
 .total-price {
-  font-size: 1.3rem;
-  color: white;
+  font-size: 1.5rem;
+  color: rgb(120, 120, 240);;
 }
 .line {
   content: none;
@@ -201,8 +211,11 @@ gap: 1rem;
     display: none;
   }
   .checkout {
-    width: 60%;
+    width: 100%;
+    background-color: rgb(120, 120, 240);;
     padding: 10px;
+    color: white;
+    border: 1px solid rgb(120, 120, 240);;
     margin-top: -2rem;
   }
   .subtotal-contain {
@@ -228,6 +241,9 @@ gap: 1rem;
     font-size: 0.7rem;
     margin-top: -0.5rem;
   }
+  .total-price {
+  font-size: 1.5rem;
+color: white;}
 }
 
 @media screen and (max-width: 600px) {
@@ -238,6 +254,7 @@ gap: 1rem;
     width: 100%;
     gap: 3rem;
   }
+  
   .inc-dec-order {
     gap: 0.5rem;
     /* border: none; */

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import "./create.css";
 import { PiSmileyStickerFill } from "react-icons/pi";
 import axios from "axios";
@@ -17,7 +17,6 @@ const Create = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!file) {
-      console.log("file is not true");
       return;
     } else {
       const newData = new FormData();

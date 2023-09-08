@@ -13,7 +13,7 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: aliceblue;
+  background-color: rgb(120, 120, 240);
   background-image: url("./assets/images/bg.png");
   background-size: contain;
 }

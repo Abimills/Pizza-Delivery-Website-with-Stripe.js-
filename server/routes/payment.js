@@ -1,13 +1,6 @@
 import express from "express";
 import stripe from "stripe";
 
-// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY, {
-//   apiVersion: "2022-08-01",
-// });
-
-// const stripeInstance = stripe(process.env.STRIPE_SECRET_KEY);
-// console.log(stripeInstance)
-
 const paymentRouter = express.Router();
 
 paymentRouter.get("/config", (req, res) => {
@@ -18,7 +11,6 @@ paymentRouter.get("/config", (req, res) => {
 
 paymentRouter.post("/create-payment-intent", async (req, res) => {
   const amountToPay = req;
-  console.log(amountToPay);
   try {
     const paymentIntent = await stripe(
       process.env.STRIPE_SECRET_KEY
@@ -31,7 +23,7 @@ paymentRouter.post("/create-payment-intent", async (req, res) => {
     // Send publishable key and PaymentIntent details to client
     res.send({
       clientSecret: paymentIntent.client_secret,
-      req:req.body
+      req: req.body,
     });
   } catch (e) {
     console.log(e);

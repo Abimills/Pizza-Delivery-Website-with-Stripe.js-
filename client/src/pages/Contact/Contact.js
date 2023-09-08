@@ -8,8 +8,10 @@ const Contact = () => {
       <div className="center-side-contact">
         <img src={circle} alt="" className="circle" />
         <div className="left-side-contact">
-          <h1 className="contact-header">Call our 24/7 customer service</h1>
-          <p className="para-header">have hour stuff listen to your appetite!</p>
+          <h1 className="contact-header">Contact us for cheesy delight</h1>
+          <p className="para-header">
+            have hour stuff listen to your appetite!
+          </p>
         </div>
       </div>
     </div>

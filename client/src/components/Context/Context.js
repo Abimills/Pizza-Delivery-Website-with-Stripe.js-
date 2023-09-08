@@ -48,16 +48,14 @@ const cartReducer = (state, action) => {
   }
 };
 const PizzaProvider = ({ children }) => {
-  const [totalAmount,setTotalAmount] = useState(10000);
+  const [totalAmount,setTotalAmount] = useState(0);
   const [state, dispatch] = useReducer(cartReducer, initialState);
-  // const [pizzaIds, setPizzaIds] = useState([]);
   useEffect(() => {
     const storedIds = JSON.parse(localStorage.getItem("cart"));
     if (storedIds) {
       dispatch({ type: "SET_CART", payload: storedIds });
     }
   }, []);
-  console.log(state.sizes);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.pizzaIds));
   }, [state.pizzaIds]);

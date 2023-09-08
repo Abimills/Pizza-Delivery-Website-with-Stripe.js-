@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import peel from "../../assets/images/pizzahandle.png";
 import gray from "../../assets/images/gray.png";
-import blue from "../../assets/images/blue.png";
 import { useParams } from "react-router-dom";
 import { GiFullPizza } from "react-icons/gi";
 import "./single.css";
@@ -12,7 +11,6 @@ const SinglePizza = () => {
   const { dispatch, cart } = useContext(AppContext);
   const [data, setData] = useState([]);
   const [pizzaSize, SetPizzaSize] = useState(cart.sizes[id] || "medium");
-  console.log(data);
 
   const fetch = async () => {
     try {

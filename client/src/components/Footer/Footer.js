@@ -1,21 +1,30 @@
-import "./footer.css"
-import {SlCallIn} from "react-icons/sl";
+import "./footer.css";
+import { SlCallIn } from "react-icons/sl";
 import { IoLocationSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer-container">
       <div className="left-side-footer">
         <h3 className="never">PizzaFam</h3>
-        <p>we love to see our customers satisfied</p>
+        <p>Serving Slice by Slice</p>
         <ul className="navigation-footer">
-          <li className="nav-footer">Home</li>
-          <li className="nav-footer">About</li>
-          <li className="nav-footer">Service</li>
+          <Link to={"/"} className="link">
+            <li className="nav-footer">Home</li>
+          </Link>
+          <Link to={"/about"} className="link">
+            <li className="nav-footer">About</li>
+          </Link>
+          <Link to={"/service"} className="link">
+            <li className="nav-footer">Service</li>
+          </Link>
         </ul>
       </div>
       <div className="center-footer">
-        <p> Designed and Coded by Abel T.</p>
         <p> @copyright claim</p>
+        <p>
+          &copy; {new Date().getFullYear()} AbelT. All Rights Reserved. Abel T.
+        </p>
       </div>
       <div className="right-side-footer">
         <h3>Contact Us</h3>
@@ -24,6 +33,6 @@ const Footer = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;

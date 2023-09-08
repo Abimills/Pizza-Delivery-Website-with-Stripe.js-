@@ -1,5 +1,4 @@
 import "./card.css";
-import pizza1 from "../../assets/images/pizza1.jpg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "../Context/Context";

@@ -4,14 +4,12 @@ import "./cart.css";
 import { AppContext } from "../Context/Context";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import PaymentForm from "../PaymentForm/PaymentForm";
 
 const Cart = () => {
   const { cart, dispatch, totalAmount, setTotalAmount } =
     useContext(AppContext);
   const [data, setData] = useState([]);
 
-  const [orderNumber, setOrderNumber] = useState(1);
   useEffect(() => {
     const fetchPizzas = async () => {
       try {
@@ -103,7 +101,7 @@ const Cart = () => {
           data?.map((pizza) => {
             const { _id, img, name, number, size, price } = pizza;
             return (
-              <div className="underline">
+              <div className="underline" key={_id}>
                 <div className="cart-order">
                   <Link to={`/detail/${_id}`}>
                     <img src={img} alt="" className="order-img" />
@@ -140,19 +138,21 @@ const Cart = () => {
           })
         )}
       </div>
-      <div className="total">
-        <h3>Thank you for shoping with us</h3>
-        <div className="subtotal-contain">
-          <p>Tax included. Shipping calculated at checkout.</p>
+      {totalAmount > 1 && (
+        <div className="total">
+          <h3>Thank you for shoping with us 🎉</h3>
+          <div className="subtotal-contain">
+            <p>Tax included. Shipping calculated at checkout.</p>
 
-          <p className="subtotal">
-            Subtotal: <span className="total-price"> ${totalAmount}.00 </span>{" "}
-          </p>
+            <p className="subtotal">
+              Subtotal: <span className="total-price"> ${totalAmount}.00 </span>{" "}
+            </p>
+          </div>
+          <Link to={"/payment"}>
+            <button className="checkout">Checkout</button>
+          </Link>
         </div>
-        {/* <Link to={"/payment"}> */}
-        <button className="checkout">Checkout</button>
-        {/* </Link> */}
-      </div>
+      )}
     </div>
   );
 };

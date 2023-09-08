@@ -1,10 +1,9 @@
 import "./nav.css";
-import leave from "../../assets/images/leave1.png";
 import { RiShoppingCart2Fill } from "react-icons/ri";
 import { IoMdPizza } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiClose } from "react-icons/tfi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -29,13 +28,18 @@ const Navbar = () => {
         </Link>
       </ul>
       <div className="logo">
+        <Link to={"/"} className="link">
         <h1 className="logo-text">PizzaFam</h1>
-        <p>to live is to enjoy</p>
+        </Link>
+        <p>Serving Slice by Slice</p>
       </div>
       <div className="contact">
         <p className="number-call"> +311000-11001</p>
         <Link to={"/contact"} className="link">
           <button className="call">Contact Us</button>
+        </Link>
+        <Link to={"/login"} className="link">
+          <button className="call">Log in</button>
         </Link>
       </div>
       <div className="cart-hamburger-container">
